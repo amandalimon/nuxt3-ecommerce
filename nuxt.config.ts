@@ -13,6 +13,11 @@ export default defineNuxtConfig({
       extensions: [".vue"],
     },
   ],
+  runtimeConfig: {
+    public: {
+      apiUrl: process.env.API_URL || "https://api.escuelajs.co/api/v1",
+    },
+  },
   imports: {
     dirs: ["./types/**"],
   },
@@ -21,6 +26,6 @@ export default defineNuxtConfig({
     componentDir: "./components/ui",
   },
   tailwindcss: {
-    cssPath: "~/assets/css/tailwind.css",
+    cssPath: "~/css/tailwind.css",
   },
 });
