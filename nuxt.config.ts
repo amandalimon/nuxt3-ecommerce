@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   compatibilityDate: "2025-05-15",
   devtools: { enabled: true },
-  modules: ["@nuxtjs/tailwindcss", "shadcn-nuxt", "@nuxt/image"],
+  modules: ["@nuxtjs/tailwindcss", "shadcn-nuxt", "@nuxt/image", "@pinia/nuxt"],
   components: [
     {
       path: "~/partials",
@@ -27,5 +27,8 @@ export default defineNuxtConfig({
   },
   tailwindcss: {
     cssPath: "~/css/tailwind.css",
+  },
+  pinia: {
+    storesDirs: ["stores/**"],
   },
 });
