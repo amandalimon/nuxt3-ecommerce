@@ -38,7 +38,6 @@
             });
           }
         "
-        class="bg-pink-500 hover:bg-pink-600 text-white rounded-lg px-4 py-2 font-semibold transition w-full"
       >
         Add to Cart
       </Button>
