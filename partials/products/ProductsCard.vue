@@ -33,8 +33,16 @@
         @click="
           () => {
             addToCart(product);
-            toast('Product added to cart', {
-              description: `${product.title} has been added to your cart`,
+            toast.success(`${product.title} has been added to your cart`, {
+              action: {
+                label: 'View Cart',
+                onClick: () => {
+                  router.push('/cart');
+                },
+              },
+              style: {
+                border: '1px solid #27272a',
+              },
             });
           }
         "
@@ -46,8 +54,9 @@
 </template>
 
 <script setup lang="ts">
-import { useCartStore } from "~/stores/useCartStore";
 import { toast } from "vue-sonner";
+
+const router = useRouter();
 
 const { product } = defineProps<{
   product: Product;

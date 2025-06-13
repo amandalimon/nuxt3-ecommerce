@@ -9,8 +9,8 @@ const props = defineProps<ToasterProps>();
     class="toaster group"
     v-bind="props"
     :style="{
-      '--normal-bg': 'white',
-      '--normal-text': 'black',
+      '--normal-bg': '#18181b',
+      '--normal-text': '#f4f4f5',
     }"
   />
 </template>
