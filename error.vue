@@ -20,11 +20,7 @@
     </p>
 
     <NuxtLink to="/">
-      <Button
-        class="mt-4 px-6 py-3 text-white font-semibold bg-pink-600 rounded-2xl shadow-lg hover:bg-pink-700 transition"
-      >
-        Go back to Home
-      </Button>
+      <Button> Go back to Home </Button>
     </NuxtLink>
   </div>
 </template>
