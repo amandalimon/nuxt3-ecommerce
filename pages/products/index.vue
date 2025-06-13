@@ -38,32 +38,5 @@ definePageMeta({
   description: "Find unique items handpicked just for you.",
 });
 
-const config = useRuntimeConfig();
-
-const { data: products, error } = await useFetch<Product[]>(
-  `${config.public.apiUrl}/products`
-);
-
-const { data: categories } = await useFetch<Category[]>(
-  `${config.public.apiUrl}/categories`
-);
-
-const categoriesList = computed(() => {
-  if (!categories.value) return ["all"];
-  const excluded = [11, 12, 13, 14, 17, 18, 19, 20, 21, 22];
-  const filtered = categories.value
-    .filter((c) => !excluded.includes(c.id))
-    .map((c) => c.name);
-  return ["all", ...filtered];
-});
-
-const selectedCategory = ref("all");
-
-const filteredProducts = computed(() => {
-  if (!products.value) return [];
-  if (selectedCategory.value === "all") return products.value;
-  return products.value.filter(
-    (p) => p.category.name === selectedCategory.value
-  );
-});
+const { categoriesList, selectedCategory, filteredProducts } = useProducts();
 </script>
