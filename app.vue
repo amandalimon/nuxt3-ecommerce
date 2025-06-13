@@ -1,10 +1,10 @@
 <template>
-  <ClientOnly>
-    <Toaster />
-  </ClientOnly>
   <NuxtLayout>
     <NuxtPage />
+    <Toaster />
   </NuxtLayout>
 </template>
 
-<script setup></script>
+<script setup>
+import 'vue-sonner/style.css' 
+</script>
