@@ -1,20 +1,30 @@
 <template>
   <div
-    class="flex flex-col items-center justify-center gap-8 p-8 bg-gradient-to-b from-zinc-900 to-zinc-800 min-h-screen text-center"
+    class="flex flex-col items-center justify-center gap-6 px-6 py-12 bg-gradient-to-b from-zinc-900 to-zinc-800 min-h-screen text-center"
   >
+    <div class="text-yellow-400 animate-bounce text-7xl">⚠️</div>
+
     <h1
-      class="text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500"
+      class="text-5xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500"
     >
       {{ error?.statusCode || 500 }}
     </h1>
-    <p class="text-2xl font-semibold text-white">
+
+    <p class="text-xl md:text-2xl font-semibold text-zinc-100">
       {{ error?.message || "Oops! Something went wrong." }}
     </p>
+
+    <p class="text-zinc-400 max-w-md">
+      We couldn't complete your request. You can go back to the homepage or try
+      again later.
+    </p>
+
     <NuxtLink to="/">
       <Button
-        class="px-6 py-3 text-white font-semibold bg-pink-600 rounded-xl hover:bg-pink-700 transition"
-        >Go back to Home</Button
+        class="mt-4 px-6 py-3 text-white font-semibold bg-pink-600 rounded-2xl shadow-lg hover:bg-pink-700 transition"
       >
+        Go back to Home
+      </Button>
     </NuxtLink>
   </div>
 </template>
