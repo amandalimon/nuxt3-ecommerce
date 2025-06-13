@@ -44,6 +44,11 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
+definePageMeta({
+  title: "Cart",
+  description: "Your favorite picks are ready — review and checkout now!",
+});
+
 const cartStore = useCartStore();
 </script>

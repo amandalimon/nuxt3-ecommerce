@@ -33,6 +33,11 @@
 </template>
 
 <script lang="ts" setup>
+definePageMeta({
+  title: "Products",
+  description: "Find unique items handpicked just for you.",
+});
+
 const config = useRuntimeConfig();
 
 const { data: products, error } = await useFetch<Product[]>(
